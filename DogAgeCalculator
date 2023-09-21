@@ -1,0 +1,35 @@
+#Include iostream
+#Include Istream
+
+int main() {
+	// Mainīgo deklerācija
+	int dog_age;
+	int early_years = 21;
+	int later_years;
+	int human_years;
+	string dog_name;
+	// Prasa Lietotājam, cik vecs un kā sauc viņa suni
+	cout << "Welcome User! I will imitate your dog and tell you your dogs' age in human years\n";
+	cout << "Input your dogs' age (in whole years):";
+	cin >> dog_age;
+
+	//Atbild, ja sunim ir 0 gadi
+	if (dog_age <= 0) {
+		cout << "I can't recognise my name, I am less than 10.5 years old in human years, or it was an incorrect input";
+		return 0;
+}
+	cout << "Input your dogs' name:";
+	cin >> dog_name;
+
+	// Nosaka Suņa vecumu, ja sunim ir 1 gads
+	if (dog_age == 1 ) {
+		cout << "My name is " << dog_name << "! And I am 10.5 years old in human years.";
+	return 0;
+}
+
+
+	// izrēķina suņa vecumu cilvēka gados
+	later_years = (dog_age - 2) * 4;
+	human_years = later_years + early_years;
+
+	cout << "My name is " << dog_name << "! I am " << human_years << " years old in human years.";
