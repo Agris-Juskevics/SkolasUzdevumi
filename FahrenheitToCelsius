@@ -1,0 +1,9 @@
+#include <iostream>
+
+int main(){
+    float gradiF;
+    cout << "Labdien! Es tev pārveidošu Fārenheita gradus uz Celsija\n" << "Ievadi grādus Fārenheitā:";
+    cin >>  gradiF;
+    float gradiC = ((gradiF - 32) * 5) / 9;
+    cout << "Grādi Celsijā:" << gradiC;
+    }
