@@ -1,0 +1,13 @@
+#include <iostream>
+
+int main(){
+
+    cout << "  A    JJJJJ\n";
+    cout << " A A     J  \n";
+    cout << "A   A    J  \n";
+    cout << "AAAAA    J  \n";
+    cout << "A   A  J J  \n";
+    cout << "A   A  J J  \n";
+    cout << "A   A   JJ  \n";
+    }
+
