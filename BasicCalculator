@@ -1,0 +1,17 @@
+#include <iostream>
+
+int main(){
+
+    float a;
+    float b;
+
+    cout << "Ieraksti pirmo skaitli:\n";
+        cin >> a;
+
+    cout << "ieraksti otro skaitli:\n";
+        cin >> b; 
+        
+        cout << "rezultats:\n" << a/b ; 
+
+    
+    }
