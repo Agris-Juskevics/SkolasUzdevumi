@@ -1,0 +1,44 @@
+# include iostream
+ # include cmath
+using namespace std;
+
+int main() {
+	//definē A B un C 
+	float a;
+	float b;
+	float c;
+	float x1;
+	float x2;
+
+	//Prasa lietotajam ievadīt vērtības
+	cout << "Kvadrātfunkcijas ax^2+bx+c=0 kalkulators \n" << "Ievadiet vērtību a:";
+	cin >> a;
+	cout << "Ievadiet vērtību b:";
+	cin >> b;
+	cout << "Ievadiet vērtību c:";
+	cin >> c;
+
+	//Matemātika
+	float Diskriminants = sqrt(b * b - 4 * a * c);
+	x1 = (-b + Diskriminants) / 2 * a;
+	x2 = (-b - Diskriminants) / 2 * a;
+	//Izvad dati lietotājam
+	bool xnum = isnan(x1);
+	if (xnum == 1) {
+		cout << "Saknu nav";
+		return 0;
+	}
+
+	if (x1 == x2) {
+
+	cout << "Ir viena sakne:" << x1;
+	}
+	else {
+	cout << "x1 vertiba:" << x1 << "\n";
+	cout << "x2 vertiba:" << x2;
+	}
+	
+
+	return 0;
+
+}
