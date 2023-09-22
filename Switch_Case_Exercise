@@ -1,0 +1,30 @@
+#include <iostream>
+using namespace ::std;
+
+int main() {
+	int number = 9;
+
+	switch (number) {
+	case 1:
+		cout << "Bulbusaur\n"; break;
+	case 2:
+		cout << "Ivysaur\n"; break;
+	case 3:
+		cout << "Venusaur\n"; break;
+	case 4:
+		cout << "Charmander\n"; break;
+	case 5:
+		cout << "Charmeleon\n"; break;
+	case 6:
+		cout << "Charizard\n"; break;
+	case 7:
+		cout << "Pichu\n"; break;
+	case 8: 
+		cout << "Pikachu\n"; break;
+	case 9:
+		cout << "Raichu\n"; break;
+	default:
+		cout << "Unknown\n";
+		break;
+	}
+}
