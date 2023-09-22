@@ -1,0 +1,25 @@
+#include <iostream>
+using namespace ::std;
+
+int main() {
+	//define variable
+	double pH;
+	//Ask user to input variable "pH"
+	cout << "Input solution pH:";
+	cin >> pH;
+	//Returns if pH is acidic, basic or neutral
+	if (pH > 7) {
+		cout << "Basic";
+	
+	}
+	else if (pH < 7) {
+		cout << "Acidic";
+	
+	}
+	else {
+		cout << "neutral";
+	
+	}
+
+	return 0;
+}
