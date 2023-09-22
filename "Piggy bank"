@@ -1,0 +1,30 @@
+#include <iostream>
+#include <cmath>
+#include <iomanip>
+using namespace std;
+
+int main() {
+	// define variables
+	float pesos;
+	float reais;
+	float soles;
+	float dollars;
+	//Asks user to input foreign currency amount
+	cout << "Enter number of Colombian Pesos:";
+	cin >> pesos;
+	cout << "Enter number of Brazilian Reais:";
+	cin >> reais;
+	cout << "Enter number of Peruvian Soles:";
+	cin >> soles;
+	// MATH(conversion rate for 21 / 09 / 2023 (DD / MM / YYYY) 10:56 AM
+	double ColpesotoUSD = 0.000256;
+	double BrealstoUSD = 0.21;
+	double PSoltoUSD = 0.2689;
+
+	dollars = (ColpesotoUSD * pesos) + (BrealstoUSD * reais) + (PSoltoUSD * soles);
+
+	cout << fixed << setprecision(2) << "US Dollars = $" << dollars;
+
+	return 0;
+	
+}
