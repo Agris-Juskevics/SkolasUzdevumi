@@ -1,0 +1,29 @@
+#include <iostream>
+using namespace ::std;
+
+int main() {
+	//Define variables
+	int year;
+	// Asks input
+	cout << "Hello! I am Leap_Year_Bot, I will calculate if the 4 digit year you input is a leap year or not\nInput:";
+	cin >> year;
+	//Checks to see if the year is a 4 digit number
+	if (year<1000 || year>9999) {
+		cout << "\nIncorrect input\nThe input is not a 4 digit number";
+			return 0;
+	} 
+	//Determines if the year is a leap year or not
+	else if (year % 4 != 0 || (year % 100 == 0 && year % 400 != 0)) {
+		cout << "Year " << year << " is not a leap year";
+		return 0;
+	}
+	else if (year % 4 == 0 || year % 400 == 0){
+		cout << "The year " << year << " is a leap year!";
+		return 0;
+	}
+	// Just in case
+	else {
+		cout << "Incorrect input";
+		return 0;
+	}
+}
