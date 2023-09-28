@@ -1,0 +1,65 @@
+#include <iostream>
+using namespace ::std;
+
+int main() {
+	// Defines variables
+	float WeightErt;
+	float WeightMer;
+	float WeightVen;
+	float WeightMar;
+	float WeightJup;
+	float WeightSat;
+	float WeightUra;
+	float WeightNep;
+	float userinpt;
+		//Asks for weight on earth
+	cout << "Hello fighter! The IPBA (Interplanetary-Boxing-Association is pleased with your initiative!\n" << "This weight conversion tool will help you calculate your weight on other planets.\n";
+	cout << "Please input your earth weight (g=9.81):";
+	cin >> WeightErt;
+
+	/* calculates weight on other planets
+	#Planet relative weight (Exoplanet gravity/Earth gravity)
+	1. Mercury 0.38
+	2. Venus 0.91
+	3. Mars 0.38
+	4. Jupiter 2.34
+	5. Saturn 1.06
+	6. Uranus 0.92
+	7. Neptune 1.19 */
+	WeightMer = (WeightErt * 0.38);
+	WeightVen = (WeightErt * 0.91);
+	WeightMar = (WeightErt * 0.38);
+	WeightJup = (WeightErt * 2.34);
+	WeightSat = (WeightErt * 1.06);
+	WeightUra = (WeightErt * 0.92);
+	WeightNep = (WeightErt * 1.19);
+	//Asks user to input what planet he wishes to fight in and lists planets
+	cout << "Very well! Now please input the number for which planet you wish to fight in!\n";
+	cout << "1. Mercury\n2.Venus\n3.Mars\n4.Jupiter\n5.Saturn\n6.Uranus\n7.Neptune\n" << "Input number:";
+	cin >> userinpt;
+	if (userinpt == 1) {
+		cout << WeightMer << "kg";
+	}
+	else if (userinpt == 2) {
+		cout << WeightVen << "kg";
+	}
+	else if (userinpt == 3) {
+		cout << WeightMar << "kg";
+	}
+	else if (userinpt == 4) {
+		cout << WeightJup << "kg";
+	}
+	else if (userinpt == 5) {
+		cout << WeightSat << "kg";
+	}
+	else if (userinpt == 6) {
+		cout << WeightUra << "kg";
+	}
+	else if (userinpt == 7) {
+		cout << WeightNep << "kg";
+	}
+	else {
+		cout << "\nError\n";
+	}
+	return 0;
+}
