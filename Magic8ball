@@ -1,0 +1,64 @@
+#include <iostream>
+#include <cstdlib>
+using namespace ::std;
+
+int main() {
+	// sets seed and generates random number, Defining variables
+
+	srand(time(NULL));
+	int rnumber = rand() % 13;
+	string userinpt;
+
+	//Asks user question so the program is interactive. For some reason c++ needs the cin to save to something so userinpt is useless beyond just satisfying the c++ gods
+	cout << "Ask a question to the MAGIC 8-BALL:";
+	cin >> userinpt;
+
+	//Depending on the random number generated gives output
+	cout << "MAGIC 8-BALL:";
+	if (rnumber == 0) {
+		cout << "It is certain";
+	}
+	else if (rnumber == 1) {
+		cout << "It is decidedly so";
+	}
+	else if (rnumber == 2) {
+		cout << "Without a doubt";
+	}
+	else if (rnumber == 3) {
+		cout << "Yes - definetly";
+	}
+	else if (rnumber == 4) {
+		cout << "You may rely on it";
+	}
+	else if (rnumber == 5) {
+		cout << "As I see it, yes";
+	}
+	else if (rnumber == 6) {
+		cout << "Outlook - good";
+	}
+	else if (rnumber == 7) {
+		cout << "Reply hazy, try again";
+	}
+	else if (rnumber == 8) {
+		cout << "My magic is too weak to answer this question";
+	}
+	else if (rnumber == 9) {
+		cout << "Very doubtful";
+	}
+	else if (rnumber == 10) {
+		cout << "My sources say no";
+	}
+	else if (rnumber == 11) {
+		cout << "Not really";
+	}
+	else if (rnumber == 12) {
+		cout << "Absolutely not";
+	}
+	else if (rnumber == 13) {
+		cout << "Very unlikely";
+	}
+
+	else {
+		cout << "Error";
+	}
+}
