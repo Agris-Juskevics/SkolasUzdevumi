@@ -1,0 +1,33 @@
+#include <iostream>
+using namespace ::std;
+
+int main () {
+//Delcaring variables
+	int num = 1;
+
+	//Checks for num being smaller or equal to 100 and for multiples of 3 prints fizz and for multiples of 5 prints Buzz, if the number is a multiple of both it prints fizzbuz
+	while (num <= 100) {
+
+		if (num % 3 == 0 && !(num % 5 ==0)) {
+			cout << "Fizz\n";
+
+		}
+		else if (num % 5 == 0 && !(num % 3 ==0)) {
+
+			cout << "Buzz\n";
+
+		}
+		else if (num % 5 == 0 && num % 3 == 0) {
+
+			cout << "FizzBuzz\n";
+
+		}
+		else {
+
+			cout << num << "\n";
+
+		}
+		num++;
+	}
+}
+	
