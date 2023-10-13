@@ -1,0 +1,50 @@
+#include <iostream>
+#include <vector>
+using namespace ::std;
+
+int main() {
+	vector<int>number;
+	bool add = 1;
+	int yesno;
+	int newnumber;
+	int finalnumber = 0;
+	while (add == 1) {
+		cout << "Current list:\n";
+	for (int i = 0; i < size(number); i++) {
+		cout << number[i];
+		cout << "\n";
+	}
+	cout << "\nDo you wish to add a number to the list ? \n1)Yes\n2)No\n";
+	cin >> yesno;
+	if (yesno == 1) {
+		cin.clear();
+		cin.ignore();
+		system("cls");
+		cout << "Input number which you want to add\n";
+		cin >> newnumber;
+		number.push_back(newnumber);
+		cin.clear();
+		cin.ignore();
+		system("cls");
+	}
+	else if (yesno == 2) {
+		cin.clear();
+		cin.ignore();
+		add = 0;
+	}
+	else {
+		system("cls");
+		cin.clear();
+		cin.ignore();
+		cout << "Invalid input, please input a valid option (1 or 2)\n\n";
+	}
+	}
+	system("cls");
+	cout << "Final list:\n";
+	for (int a = 0; a < size(number); a++) {
+		cout << number[a] << "\n";
+		finalnumber = finalnumber + number[a];
+	}
+	cout << "Sum:" << finalnumber;
+
+}
