@@ -1,0 +1,107 @@
+#include <iostream>
+#include <stdlib.h>
+#include <thread>
+using namespace std;
+
+int main() {
+	//Mainigo dekleracija
+	srand(time(NULL));
+	int computer = rand() % 3 + 1;
+	int user;
+	bool winner = 0;
+	int playagain;
+
+	cout << "====================\n";
+	cout << "rock paper scissors!\n";
+	cout << "====================\n";
+
+	// Speles
+	while (winner == 0) {
+
+		cout << "1) Rock\n";
+		cout << "2) Paper\n";
+		cout << "3) Scissors\n";
+
+		cout << "shoot!\n";
+		cin >> user;
+
+		if (user == computer) { //Apskata neizskirta gadijumu
+			computer = rand() % 3 + 1; // Maina datora ievadu, lai lietotajs nevar zinat datora ievadu
+			system("cls");
+			string tie = "Tie";
+			for (int t = 0; t < size(tie); t++) {
+				cout << tie[t];
+				this_thread::sleep_for(25ms);
+			}
+			this_thread::sleep_for(75ms);
+			system("cls");
+			cout << "Resulted in a tie! Choose again\n";
+			cin.clear(); //Gadijuma, ka lietotajs ievada burtu pec skaitla (e.g. 5q) sis laujs lietotajam ievadit velreiz.
+			cin.ignore();
+		}
+		else if ((user == 1 && computer == 2) || (user == 2 && computer == 3) || (user == 3 && computer == 1)) { //Apskata zaudesanas gadijumu 
+			cin.clear();
+			cin.ignore();
+			computer = rand() % 3 + 1;
+			system("cls");
+			string lost = "You lost";
+			for (int l = 0; l < size(lost); l++) {
+				cout << lost[l];
+				this_thread::sleep_for(25ms);
+			}
+			this_thread::sleep_for(75ms);
+			system("cls");
+			cout << "You have lost.\nWish to play again?\n1)Yes\n2)No\n";
+			cin >> playagain;
+			if (playagain == 1) {
+				system("cls");
+				cout << "You lost, and chose to play again\n\n";
+			}
+			else if (playagain == 2) {
+				winner = 1;
+				return 0;
+			}
+			else {
+				cout << "incorrect input, assumed answer 1) yes\n";
+			}
+		}
+		else if ((computer == 1 && user == 2) || (computer == 2 && user == 3) || (computer == 3 && user == 1)) {
+			cin.clear();
+			cin.ignore();
+			computer = rand() % 3 + 1;
+			system("cls");
+			string won = "You won!";
+			for (int w = 0; w < size(won); w++) {
+				cout << won[w];
+				this_thread::sleep_for(25ms);
+			}
+			this_thread::sleep_for(75ms);
+			system("cls");
+			cout << "You have won!\nWish to play again?\n1)Yes\n2)No\n";
+			cin >> playagain;
+			if (playagain == 1) {
+				system("cls");
+				cout << "You won, and chose to play again\n\n";
+			}
+			else if (playagain == 2) {
+				winner = 1;
+				return 0;
+			}
+			else {
+				cout << "incorrect input, assumed answer 1) yes\n";
+			}
+		}
+		else {
+			system("cls");
+			cout << "Invalid option, choose a valid option (1, 2, 3)" << endl;
+			cin.clear();
+			cin.ignore(numeric_limits<streamsize>::max(), '\n');
+			cout << "\n";
+		}
+
+
+
+
+
+	}
+}
