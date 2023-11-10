@@ -1,0 +1,51 @@
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+float discriminant(float a, float b, float c) {
+	//calculates the discriminant
+	float discriminant;
+	discriminant = b * b - 4 * a * c;
+	return discriminant;
+}
+float root1(float discriminant, float a, float b, float c) {
+	//calculates the first root of the quadratic formula
+	float root1;
+	root1 = (-1 * b + sqrt(discriminant)) / 2 * a;
+	return root1;
+}
+float root2(float discriminant, float a, float b, float c) {
+	//calculates the second root of the quadratic formula
+	float root2;
+	root2 = (-1 * b - sqrt(discriminant)) / 2 * a;
+	return root2;
+}
+int main() {
+	//Inputs users Quadratic formula values
+	float a;
+	float b;
+	float c;
+	cout << "Input A, B and C values for your quadratic formula:\n";
+	cout << "A: ";
+	cin >> a;
+	cout << "B: ";
+	cin >> b;
+	cout << "C: ";
+	cin >> c;
+	//Allows the display of values
+	cout << "discriminant: " << discriminant(a, b, c) << endl;
+	float disc = discriminant(a, b, c);
+	float roots1 = root1(disc, a, b, c);
+	float roots2 = root2(disc, a, b, c);
+	//Displays roots
+	if (disc < 0) {
+		cout << "discriminant is less than 0. There are no roots to this function";
+	}
+	else if (disc == 0) {
+		cout << "There is one root to this function:" << roots1;
+	}
+	else{
+		cout << "Root 1: " << roots1 << endl;
+		cout << "Root 2: " << roots2 << endl;
+	}
+}
