@@ -1,0 +1,53 @@
+#include <iostream>
+#include <vector>
+#include <string>
+using namespace std;
+
+int sum_even_numbers(vector<int>numbers) {
+	int sum = 0;
+	for (int x = 0; x < numbers.size(); x++) {
+		if (numbers[x] % 2 == 0) {
+			sum = sum + numbers[x];
+		}
+	}
+	return sum;
+}
+
+int main() {
+	vector<int>numbers = {};
+	string userinput;
+	int extranum;
+	while (true) {
+		cout << "current numbers: ";
+		for (int i = 0; i < numbers.size(); i++) {
+			cout <<  numbers[i] << " ";
+		}
+		cout << "\ndo you wish to add numbers to the list? y/n\n";
+		cin >> userinput;
+		if (userinput == "y") {
+			system("cls");
+			cout << "Input number you wish to add:";
+			cin >> extranum;
+			numbers.push_back(extranum);
+			system("cls");
+		}
+		else if (userinput == "n") {
+			system("cls");
+			break;
+		}
+		else if (userinput != "y" || userinput != "n") {
+			system("cls");
+			cout << "Invalid choice! Please enter a valid option (y(yes)/n(no))." << endl;
+			cin.clear();
+			cin.ignore(); 
+		}
+	}
+	int sum = sum_even_numbers(numbers);
+	cout << "Even numbers in list: " << endl;;
+	for (int x = 0; x < numbers.size(); x++) {
+		if (numbers[x] % 2 == 0) {
+			cout << numbers[x] << endl;
+		}
+	}
+	cout << "sum of the even numbers: " << sum;
+}
