@@ -1,0 +1,47 @@
+/*Uzdevums A*/
+#include <iostream>
+
+using namespace ::std;
+
+int main() {
+	setlocale(LC_ALL, "Latvian");
+	//Variable declaration
+	int num1;
+	int num2;
+	string continuestring;
+	while (true) {
+		//Asks user for both numbers
+		cout << "Ievadi divus naturālus skaitļus un es atradīšu visus abus skaitļa dalītājus\n";
+		cout << "Ievadi pirmo skaitli: ";
+		cin >> num1;
+		cout << "Ievadi otro skaitli: ";
+		cin >> num2;
+
+		//outputs all shared dividers
+		for (int i = 1; i <= num1 && i <= num2; i++) {
+			if (num1 % i == 0 && num2 % i == 0) {
+				cout << i << " (" << num1 / i << " | " << num2 / i << ")" << "\n";
+			}
+		}
+		//Asks user if he wishes to continue checking numbers
+			cout << "Do you wish to input new numbers? (y/n)\n";
+		while (true) {
+			cin >> continuestring;
+			if (continuestring == "y") {
+				system("cls");
+				cin.clear();
+				cin.ignore();
+				break;
+			}
+			else if (continuestring == "n") {
+				return 0;
+			}
+			else {
+				system("cls");
+				cin.clear();
+				cin.ignore();
+				cout << "Nepareizs ievads, lūdzu ievadi pareizu ievadu (y/n)\n";
+			}
+		}
+	}
+}
