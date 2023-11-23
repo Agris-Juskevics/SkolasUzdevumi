@@ -1,0 +1,139 @@
+#include <iostream>
+#include <cmath>
+#include <vector>
+#include <thread>
+using namespace std;
+/* Coding challenge 1 
+void introduction(string first_name, string last_name) {
+	cout << last_name << ", " << first_name << " " << last_name;
+}
+int main() {
+	string first_name = "James";
+	string last_name = "Bond";
+	introduction(first_name, last_name);
+}
+*/
+/*Code challenge 2
+double average(double num1, double num2) {
+	double avg = (num1 + num2) / 2;
+		return avg;
+}
+int main() {
+	double num1;
+	double num2;
+	cout << "Input two numbers, you wish to find the average of\n" << "First number:";
+	cin >> num1;
+	cout << "Second number:";
+	cin >> num2;
+	cout << average(num1, num2);
+}*/
+/* Coding challenge 3
+long long int tenth_power(long long int a) {
+	long long int power = a * a * a * a * a* a * a * a * a * a;
+	return power;
+}
+int main() {
+	int num;
+	cout << "Input number you wish to raise to the power of 10:";
+	cin >> num;
+	cout << tenth_power(num);
+} */
+/* Code challenge 4
+vector<int> first_three_multiples(int num) {
+	vector<int>multiples = {};
+	multiples.push_back(num * 1);
+	multiples.push_back(num * 2);
+	multiples.push_back(num * 3);
+	return multiples;
+}
+int main() {
+	int input;
+	cout << "Input number you want the first three multiples of: ";
+	cin >> input;
+	vector<int>multiples = first_three_multiples(input);
+	for (int i = 0; i < multiples.size(); i++) {
+		cout << multiples[i] << endl;
+		this_thread::sleep_for(25ms);
+	}
+} */
+/*Code challenge 5
+string needs_water(int days, bool is_succulent) {
+	if (is_succulent == 0 && days > 3) {
+		return "time to water the plant";
+	}
+	else if (is_succulent == 1 && days <= 12) {
+		return "Don't water the plant";
+	}
+	else if (is_succulent == 1 && days >= 13) {
+		return "Go ahead and give the plant a little water.";
+	}
+	else {
+		return "Don't water the plant.";
+	}
+}
+int main() {
+	int days = 13;
+	bool succulent;
+	string yesno1;
+	while (true) {
+		cout << "Input if your plant is succulent (y/n):";
+		cin >> yesno1;
+		if (yesno1 == "y") {
+			succulent = 1;
+			system("cls");
+			break;
+		}
+		else if (yesno1 == "n") {
+			succulent = 0;
+			system("cls");
+			break;
+		}
+		else {
+			system("cls");
+			cin.clear();
+			cin.ignore();
+		}
+	}
+	while (true) {
+		cout << "Input how long ago you last watered the plant:";
+		cin >> days;
+		if (days < 0) {
+			system("cls");
+			cin.ignore();
+			cout << "Invalid input, please enter a valid input (days are equal to or greater than 0)\n";
+		}
+		else {
+			system("cls");
+			break;
+		}
+	}
+	string watering = needs_water(days, succulent);
+	cout << watering;
+
+} */
+/* Code challenge 6
+bool is_palindrome(string text) {
+	bool flag = true;
+	for (int i = 0; i < text.size(); i++) {
+		if (text[i] != text[text.size() - 1 - i]) {
+			return false;
+			break;
+		}
+	}
+	return flag;
+}
+int main() {
+		string text;
+		int check;
+		// Gets text
+		cout << "Enter your text and I will output whether it is or isnt a palindrome: ";
+		cin >> text;
+		//checks whether 
+		bool truefalse = is_palindrome(text);
+		if (truefalse == 0) {
+			cout << "False, it is not a palindrome\n";
+		}
+		else if (truefalse == 1) {
+			cout << "True, it is a palindrome\n";
+		}
+} */
