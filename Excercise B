@@ -1,0 +1,37 @@
+/* Uzdevums B*/
+#include <iostream>
+#include <cmath>
+using namespace ::std;
+
+
+int main() {
+	setlocale(LC_ALL, "Latvian");
+	// Variable decleration
+	long long int a = 0;
+	long long int b = 0;
+	long long int c = 0;
+	long long int n;
+
+	//Asks user for number
+	cout << "Ievadi skaitli un es atradīšu visus naturālos skaitļu taisnleņķa trijstūra malas, kuru hipotenūza ir tikpat gara vai īsāka par C\n";
+	cout << "Ievadi skaitli: ";
+	cin >> n;
+
+	// Calculates triangle sides
+	while (n > 0) { 
+		for (long long int i = 1; i < (n * n); i++) { //We go through all values between c^2 and 0 as our triangle sides
+			b = sqrt(n * n - i);
+			a = sqrt(i);
+			c = sqrt(n * n);
+			if (static_cast<long long int>(c*c) == (static_cast<long long int>(a*a) + static_cast<long long int>(b*b)) && (a<b)) { // I use static cast so that it forces the values to be natural numbers and not auto convert to floats, a must be smallr than b as stated by exercise
+				cout << "A: " << a << endl;
+				cout << "B: " << b << endl;
+				cout << "C: " << c << endl;
+				cout << endl;
+			}
+			
+		}
+		n--;
+		//cout << "n: " << n << "	a: " << a << "	b: " << b << "	c: " << c; // Debug line
+	}
+}
