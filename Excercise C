@@ -1,0 +1,71 @@
+/*uzdevums C*/
+#include <iostream>
+#include <vector>
+using namespace std;
+
+int main() {
+	//mainīgo deklerācija
+	vector<int>v1 = { 0, 0, 0 };
+	vector<int>v2 = { 1, 0, 1 };
+	vector<int>v3 = { 1, 1, 1 };
+	vector<vector<int>> a = {v1,v2,v3 }; // Iespējams ievietot visas vektora vērtības pa taisno nevis lietojot atšķirīgus vektorus, kā mainīgos 2D vektorā
+	int koprind;
+	int kopkol1 = 0;
+	int kopkol2 = 0;
+	int kopkol3 = 0;
+
+	//pārbauda vektoru vertību summas, ja to vērtību summa ir vienāda ar tā izmēru tad tajā ir tikai 1, bet, ja to vērtību summa ir 0, tad visas tās vērtības ir 0
+	for (int i = 0; i < a.size(); i++) {
+		koprind = 0;
+		for (int j = 0; j < a[i].size(); j++) {
+			koprind += a[i][j];
+			//cout << a[i][j] << " "; 
+		}
+		// Saskaita kolonnas vērtības
+		kopkol1 += a[i][0];
+		kopkol2 += a[i][1];
+		kopkol3 += a[i][2];
+		//izprintē vai vektorā ir tikai 0 vai 1.
+		if (koprind == 0) {
+			cout << i+1 << ". Vector has only 0's" << endl;
+		}
+		else if (koprind == a[i].size()) {
+			cout << i+1 << ". Vector has only 1's" << endl;
+		}
+		else {
+			cout << i+1 << ". Vector has a mix of values" << endl;
+		}
+	}
+	//Izprintē vai kollonas vērtības ir tikai 0 vai 1
+	if (kopkol1 == 0) {
+		cout << "1st column has only 0's" << endl;
+	}
+	else if (kopkol1 == a.size()) {
+		cout << "1st column has only 1's" << endl;
+	}
+	else {
+		cout << "1st column has a mix of values" << endl;
+	}
+
+	if (kopkol2 == 0) {
+		cout << "2nd column has only 0's" << endl;
+	}
+	else if (kopkol2 == a.size()) {
+		cout << "2nd column has only 1's" << endl;
+	}
+	else {
+		cout << "2nd column has a mix of values" << endl;
+	}
+
+	if (kopkol3 == 0) {
+		cout << "3rd column has only 0's" << endl;
+	}
+	else if (kopkol3 == a.size()) {
+		cout << "3rd column has only 1's" << endl;
+	}
+	else {
+		cout << "3rd column has a mix of values" << endl;
+	}
+
+
+}
