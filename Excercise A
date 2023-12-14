@@ -24,7 +24,7 @@ int main() {
 			}
 		}
 		//Asks user if he wishes to continue checking numbers
-			cout << "Do you wish to input new numbers? (y/n)\n";
+			cout << "Vēlies ievadīt jaunus skaitļus? (y/n)\n";
 		while (true) {
 			cin >> continuestring;
 			if (continuestring == "y") {
