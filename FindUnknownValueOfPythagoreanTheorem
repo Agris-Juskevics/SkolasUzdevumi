@@ -1,0 +1,24 @@
+from math import sqrt
+import os
+from turtle import clear
+
+a = True
+
+
+while a:
+    print("Input the unknown value as 0")
+    hip = float(input("Value of hypotenuse: "))
+    cat1 = float(input("Value of the first cathetus: "))
+    cat2 = float(input("Value of the second cathetus: "))
+
+    if hip >= 0 and cat1 >= 0 and cat2 >= 0:
+        a = False
+        if hip == 0:
+            print("The value of the hypotenuse is", sqrt(cat1**2 + cat2**2))
+        elif cat2 == 0:
+            print("The value of the 2nd cathetus is", sqrt(hip**2 - cat1**2))
+        elif cat1 == 0:
+            print("The value of the 1st cathetus is", sqrt(hip**2 - cat2**2))
+    else:
+        os.system('cls' if os.name == 'nt' else 'clear')
+        print("Invalid inputs")
