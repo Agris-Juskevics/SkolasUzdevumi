@@ -1,0 +1,56 @@
+import requests
+from bs4 import BeautifulSoup
+import tkinter as tk
+
+def update_stock_values():
+    global a
+    url = f"https://www.google.com/finance/quote/{a}"
+    page = requests.get(url)
+    soup = BeautifulSoup(page.content, 'html.parser')
+    stockprice = soup.find('div', class_="ivZBbf ygUjEc").find('div', class_="YMlKec fxKbKc").text
+    stockpricechange = soup.find('div', class_="ivZBbf ygUjEc").find('span', class_="P2Luy Ebnabc DnMTof").text + "$"
+    stockpriceprocent = soup.find('div', class_="ivZBbf ygUjEc").find('span', class_="JwB6zf Ebnabc P2Luy DnMTof").text
+    if stockpricechange[0] == "-":
+        stockpriceprocent = "-" + stockpriceprocent
+    elif stockpricechange[0] == "+":
+        stockpriceprocent = "+" + stockpriceprocent
+    stock_values_label.config(text=f"Price: {stockprice}, Change: {stockpricechange}, Percent Change: {stockpriceprocent}")
+
+def change_stock(symbol):
+    global a
+    a = symbol
+    update_stock_values()
+
+a = "MSFT:NASDAQ"
+
+root = tk.Tk()
+root.title("Stock Price Checker")
+root.geometry("400x300")
+
+# Main Frame
+main_frame = tk.Frame(root)
+main_frame.pack(pady=20)
+
+# Buttons Frame
+buttons_frame = tk.Frame(main_frame)
+buttons_frame.pack()
+
+update_button = tk.Button(buttons_frame, text="Update", command=update_stock_values)
+update_button.grid(row=0, column=0, padx=5, pady=5)
+
+change_button1 = tk.Button(buttons_frame, text="Microsoft", command=lambda: change_stock("MSFT:NASDAQ"))
+change_button1.grid(row=0, column=1, padx=5, pady=5)
+
+change_button2 = tk.Button(buttons_frame, text="Apple", command=lambda: change_stock("AAPL:NASDAQ"))
+change_button2.grid(row=0, column=2, padx=5, pady=5)
+
+change_button3 = tk.Button(buttons_frame, text="Tesla", command=lambda: change_stock("TSLA:NASDAQ"))
+change_button3.grid(row=0, column=3, padx=5, pady=5)
+
+# Stock Values Label
+stock_values_label = tk.Label(main_frame, text="", font=("Arial", 12))
+stock_values_label.pack(pady=10)
+
+update_stock_values()
+
+root.mainloop()
